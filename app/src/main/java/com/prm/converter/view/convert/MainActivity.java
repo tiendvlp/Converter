@@ -1,4 +1,4 @@
-package com.prm.converter.view;
+package com.prm.converter.view.convert;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;

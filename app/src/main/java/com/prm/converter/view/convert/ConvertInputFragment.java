@@ -1,15 +1,13 @@
-package com.prm.converter.view;
+package com.prm.converter.view.convert;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.room.Room;
-import androidx.room.RoomDatabase;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,8 +20,6 @@ import com.prm.converter.dao.ConvertHistoryDao;
 import com.prm.converter.database.AppDatabase;
 import com.prm.converter.entity.ConvertHistory;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.UUID;
 
 public class ConvertInputFragment extends Fragment implements MainScreenComponentProvider.ConvertInputScreen {

@@ -1,4 +1,4 @@
-package com.prm.converter.view;
+package com.prm.converter.view.convert;
 
 public interface MainScreenComponentProvider {
     public interface ConvertInputScreen {

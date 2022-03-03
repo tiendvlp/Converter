@@ -1,4 +1,4 @@
-package com.prm.converter.view;
+package com.prm.converter.view.history;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;

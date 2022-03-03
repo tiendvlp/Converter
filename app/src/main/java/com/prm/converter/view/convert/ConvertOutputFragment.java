@@ -1,4 +1,4 @@
-package com.prm.converter.view;
+package com.prm.converter.view.convert;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.prm.converter.R;
-import com.prm.converter.entity.ConvertHistory;
+import com.prm.converter.view.history.ConvertHistoryActivity;
 
 public class ConvertOutputFragment extends Fragment implements MainScreenComponentProvider.ConvertOutputScreen {
     private TextView txtResult;
