@@ -31,7 +31,7 @@ public class ConvertInputFragment extends Fragment implements MainScreenComponen
     private Spinner spnFrom;
     private Spinner spnTo;
     private Button btnConvert;
-    private String[] SUPPORTED_LIST = new String[2];
+    private String[] SUPPORTED_LIST = new String[3];
     private MainScreenComponentProvider componentProvider;
     private AppDatabase db;
     private ConvertHistoryDao historyDao;
@@ -41,6 +41,7 @@ public class ConvertInputFragment extends Fragment implements MainScreenComponen
         super.onCreate(savedInstanceState);
         SUPPORTED_LIST[0] = "Meter";
         SUPPORTED_LIST[1] = "Kilometer";
+        SUPPORTED_LIST[2] = "Centimeter";
         componentProvider = (MainScreenComponentProvider) getActivity();
         db = Room.databaseBuilder(getContext(), AppDatabase.class, AppDatabase.DB_NAME)
             .allowMainThreadQueries().build();
@@ -90,14 +91,29 @@ public class ConvertInputFragment extends Fragment implements MainScreenComponen
             result = value;
         }
 
+
         if (from.equals(SUPPORTED_LIST[0])) { // From Meter
             if (to.equals(SUPPORTED_LIST[1])) { // to kilometer
                 result = value / 1000;
+            }
+            if (to.equals(SUPPORTED_LIST[2])) { // to centimeter
+                result = value * 1000;
             }
         }
         else if (from.equals(SUPPORTED_LIST[1])) { // from Kilometer
             if (to.equals(SUPPORTED_LIST[0])) { // to meter
                 result = value * 1000;
+            }
+            if (to.equals(SUPPORTED_LIST[2])) { // to centimeter
+                result = value * 1000 * 1000;
+            }
+        }
+        else if (from.equals(SUPPORTED_LIST[2])) { // from centimeter
+            if (to.equals(SUPPORTED_LIST[0])) { // to meter
+                result = value / 1000;
+            }
+            if (to.equals(SUPPORTED_LIST[1])) { // to Kilometer
+                result = (value / 1000) / 1000;
             }
         }
 
